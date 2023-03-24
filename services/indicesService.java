@@ -7,7 +7,7 @@ public class indicesService {
 
     public static void criaIndice(int id, long endereco){
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/indices.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
 
             arq.seek(arq.length());
 
@@ -23,7 +23,7 @@ public class indicesService {
         long endereco = 0;
 
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/indices.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("..//dados//indices.db", "rw");
             arq.seek(0);
             while(idLido != id){
                 idLido = arq.readInt();
@@ -43,7 +43,7 @@ public class indicesService {
         long enderecoDoIndiceAtual = 0;
 
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/indices.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("..//dados//indices.db", "rw");
             arq.seek(0);
             while(idLido != id){
                 enderecoDoIndiceAtual = arq.getFilePointer();

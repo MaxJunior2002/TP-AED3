@@ -10,7 +10,7 @@ public class registrosService {
     public static void criaRegistro(Registro registro){
         try{
             indicesService indices = new indicesService();
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
 
             int id = geraId();
 
@@ -31,7 +31,7 @@ public class registrosService {
         Registro registro = new Registro();
 
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
             arq.seek(endereco);
 
             registro.tamanho = arq.readInt();
@@ -54,7 +54,7 @@ public class registrosService {
         long endereco = indicesService.pegaEndereco(id);
 
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
             arq.seek(endereco);
 
             int tamanho = arq.readInt();
@@ -91,7 +91,7 @@ public class registrosService {
 
     public static void excluiRegistro(long endereco){
         try{
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
             arq.seek(endereco);
 
             int tamanho = arq.readInt();
@@ -106,7 +106,7 @@ public class registrosService {
 
     public static int geraId(){
         try {
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
 
             arq.seek(0);
             int id = arq.readInt();
@@ -123,7 +123,7 @@ public class registrosService {
 
     public static int pegaIdAtual(){
         try {
-            RandomAccessFile arq = new RandomAccessFile("src/dados/jogadores.db", "rw");
+            RandomAccessFile arq = new RandomAccessFile("dados//jogadores.db", "rw");
 
             arq.seek(0);
             int id = arq.readInt();
